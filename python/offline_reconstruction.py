@@ -25,10 +25,11 @@ if __name__ == "__main__":
     parser.add_argument('--freq_hz', '-fhz', type=int, default=0, help='Frequency for saving the reconstructed images from events')
     parser.add_argument('--timestamps_file', '-tsf', help='Path to txt file containing image reconstruction timestamps')
     parser.add_argument('--upsample_rate', '-u', type=int, default=1, help='Multiplies the number of reconstructions, which effectively lowers the time window of events for E2VID. These intermediate reconstructions will not be saved to disk.')
-    
+
     set_inference_options(parser)
 
     args = parser.parse_args()
+    args.use_gpu = True
 
     # Data loader
     if not os.path.isfile(args.h5file):
