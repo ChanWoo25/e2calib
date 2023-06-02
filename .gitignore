@@ -153,3 +153,4 @@ dmypy.json
 .pyre/
 
 E2VID_lightweight.pth.tar
+frames
